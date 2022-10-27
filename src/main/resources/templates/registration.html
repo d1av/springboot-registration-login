@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
 <title>Cadastro</title>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+<!-- CSS only -->
+<!-- CSS only -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
 	crossorigin="anonymous">
 </head>
 <body>
 
 	<!-- create navigation bar -->
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-					aria-controls="navbar">
-					<span class="sr-only">Mudar navegação</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#" th:href="@{/}">Modulo de Login e Cadastro</a>
+
+	<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+		<div class="container-fluid">
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+				aria-controls="navbarNavAltMarkup" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="navbar-brand" href="#" th:href="@{/}">Modulo de Login
+						e Cadastro</a>
+				</div>
 			</div>
 		</div>
 	</nav>
@@ -31,43 +37,43 @@
 	<!-- Create HTML registration form -->
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
+			<div class="m-9">
 
 				<!-- success message -->
 				<div th:if="${param.success}">
-					<div class="alert alert-info">Você se cadastrou com sucesso!</div>
+					<div class="alert alert-info">VocÃª se cadastrou com sucesso!</div>
 				</div>
 
 				<h1>Registration</h1>
 
 				<form th:action="@{/registration}" method="post" th:object="${user}">
 					<div class="form-group">
-						<label class="control-label" for="firstName"> Primeiro Nome </label>
-						<input id="firstName" class="form-control" th:field="*{firstName}"
+						<label class="form-label" for="firstName"> Primeiro
+							Nome </label> <input id="firstName" class="form-control"
+							th:field="*{firstName}" required autofocus="autofocus" />
+					</div>
+
+					<div class="form-group">
+						<label class="form-label" for="lastName"> Ãšltimo Nome </label>
+						<input id="lastName" class="form-control" th:field="*{lastName}"
 							required autofocus="autofocus" />
 					</div>
 
 					<div class="form-group">
-						<label class="control-label" for="lastName"> Último Nome </label> <input
-							id="lastName" class="form-control" th:field="*{lastName}"
-							required autofocus="autofocus" />
-					</div>
-
-					<div class="form-group">
-						<label class="control-label" for="email"> Email </label> <input
+						<label class="form-label" for="email"> Email </label> <input
 							id="email" class="form-control" th:field="*{email}" required
 							autofocus="autofocus" />
 					</div>
 
 					<div class="form-group">
-						<label class="control-label" for="password"> Senha </label> <input
+						<label class="form-label" for="password"> Senha </label> <input
 							id="password" class="form-control" type="password"
 							th:field="*{password}" required autofocus="autofocus" />
 					</div>
 
 					<div class="form-group">
-						<button type="submit" class="btn btn-success">Cadastro</button>
-						<span>Já cadastrado? <a href="/" th:href="@{/login}">Logue
+						<button type="submit" class="btn btn-success" style="margin-top:10px">Cadastro</button>
+						<span>JÃ¡ cadastrado? <a href="/" th:href="@{/login}">Logue
 								aqui</a></span>
 					</div>
 				</form>

@@ -1,7 +1,6 @@
 package com.security.springboot.web;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,7 +28,7 @@ public class UserRegistrationController {
 	@GetMapping							//(Model model)
 	public String showRegistrationForm() {
 		//model.addAttribute("user", new UserRegistrationDto());
-		return "registration";
+		return "registration.html";
 	}
 	
 	
