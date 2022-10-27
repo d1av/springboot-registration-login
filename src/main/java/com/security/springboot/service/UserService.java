@@ -1,10 +1,10 @@
-package com.security.service;
+package com.security.springboot.service;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
-import com.security.model.User;
-import com.security.web.dto.UserRegistrationDto;
+import com.security.springboot.model.User;
+import com.security.springboot.web.dto.UserRegistrationDto;
 
 @Service
 public interface UserService extends UserDetailsService{
