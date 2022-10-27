@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import javax.persistence.Id;
 
 @Entity
-@Table
+@Table(name = "role")
 public class Role {
 
 	@Id
@@ -15,10 +15,8 @@ public class Role {
 	private Long Id;
 	private String name;
 
-	public Role(Long id, String name) {
-		super();
-		Id = id;
-		this.name = name;
+	public Role() {
+
 	}
 
 	public Long getId() {
